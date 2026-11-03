@@ -2,7 +2,7 @@
    AI NAVIGATOR — Main Application & System Router
    ============================================ */
 
-const API_ROOT = "http://127.0.0.1:8000/api";
+const API_ROOT = "https://navigator-ai-api.onrender.com/api";
 
 // Available page fragments
 const PAGES = {
