@@ -105,12 +105,16 @@ app = FastAPI(
 # Allows localhost and 127.0.0.1 on any port (like 5500 for Live Server) with cookie/auth support
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"http://(localhost|127\.0\.0\.1)(:\d+)?",
+    allow_origins=[
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+        "http://localhost:8000",
+        "https://navigator-ai-frontend.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Register All API Routers
 app.include_router(auth.router)
 app.include_router(search.router)
